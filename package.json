@@ -1,0 +1,23 @@
+{
+  "name": "basi.css",
+  "version": "1.0.0",
+  "description": "A classless, minimal and lightweight CSS framework built for simplicity, elegance and speed.",
+  "main": "basi.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0X-ar/basi.css.git"
+  },
+  "keywords": [
+    "basic",
+    "css",
+    "simple",
+    "minimal",
+    "elegant"
+  ],
+  "author": "Andrei Racasan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0X-ar/basi.css/issues"
+  },
+  "homepage": ""
+}
