@@ -1,18 +1,19 @@
 /* basi.css v1.0 - https://github.com/0X-ar/basi.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen-Sans, Ubuntu, 'Helvetica Neue', sans-serif;
 
-  --main: #0096ff;
+  --accent: #0096ff;
+  --white: #ffffff;
   --bg: #fbfbf8;
   --bg-sec: #ddd;
   --text: #333;
   --text-sec: #999;
 
-  --card-s: 250px;
+  --card-s: 300px;
   --card-m: 500px;
   --card-l: 750px;
   --content: 1000px;
@@ -28,6 +29,11 @@
   --center: center;
   --left: left;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+  }
+} */
 
 *,
 *::before,
@@ -51,33 +57,34 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-footer,
 header,
 main {
   margin: 0 auto;
   max-width: var(--content);
-  padding: 2.5rem 1.25rem;
+  padding: 2rem 1.25rem;
+}
+
+footer {
+  text-align: center;
+  padding: 0.75rem 0 1rem 0;
 }
 
 hr {
   background-color: var(--shadow);
   border: none;
   height: 2px;
-  margin: 3rem 0;
+  margin: 1rem 0;
   width: 100%;
 }
 
 article aside {
-  background: var(--bg-sec);
-  border-left: 0.25rem solid var(--main);
-  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--bg-sec);
   border-radius: var(--radius);
-}
-
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: var(--center);
+  box-shadow: var(--shadow) var(--box-shadow);
+  margin: 0.5rem;
+  padding: 1.25rem;
+  width: var(--card-s);
 }
 
 section img,
@@ -91,13 +98,14 @@ section pre {
 }
 
 section aside {
-  background-color: #fff;
-  border: 1px solid var(--bg-sec);
+  background: var(--bg-sec);
+  border-left: 0.25rem solid var(--accent);
+  padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  box-shadow: var(--shadow) var(--box-shadow);
-  margin: 1rem;
-  padding: 1.25rem;
-  width: var(--card-s);
+}
+
+section aside p {
+  margin: 1rem 0;
 }
 
 section aside:hover {
@@ -112,10 +120,6 @@ article header,
 div header,
 main header {
   padding: 0;
-}
-
-header {
-  text-align: var(--center);
 }
 
 header a b,
@@ -200,9 +204,9 @@ nav ul li ul li a {
 
 code,
 samp {
-  background-color: var(--main);
+  background-color: var(--accent);
   border-radius: var(--radius);
-  color: var(--text);
+  color: var(--white);
   display: inline-block;
   margin: 0 0.1rem;
   padding: 0 0.5rem;
@@ -224,9 +228,10 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  color: #444;
   line-height: var(--line-height);
   overflow-wrap: break-word;
-  margin: 0 0 1rem 0;
+  margin: 1.25rem 0 0.25rem 0;
 }
 
 h1 {
@@ -265,7 +270,7 @@ ul li {
 }
 
 p {
-  margin: 0.75rem 0;
+  margin: 0.2rem 0 1rem 0;
   padding: 0;
   width: 100%;
 }
@@ -289,7 +294,7 @@ small {
 }
 
 a {
-  color: var(--main);
+  color: var(--accent);
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
@@ -335,22 +340,29 @@ button:hover {
 a b,
 a strong,
 button {
-  background-color: var(--main);
-  border: 2px solid var(--main);
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
   color: var(--bg);
 }
 
 a em,
 a i {
-  border: 2px solid var(--main);
+  border: 2px solid var(--accent);
   border-radius: var(--radius);
-  color: var(--main);
+  color: var(--accent);
   display: inline-block;
   padding: 1rem 2rem;
 }
 
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
 article aside a {
-  color: var(--main);
+  color: var(--accent);
 }
 
 figure {
@@ -360,6 +372,7 @@ figure {
 
 figure figcaption {
   color: var(--text-sec);
+  margin: 1rem 0 0.5rem 0;
 }
 
 button:disabled,
@@ -376,7 +389,7 @@ button[disabled]:hover {
 
 form {
   border: 1px solid var(--bg-sec);
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow) var(--box-shadow);
   display: block;
@@ -384,11 +397,15 @@ form {
   min-width: var(--card-s);
   padding: 1.5rem;
   text-align: var(--left);
+  margin: 3rem auto 0 auto;
 }
 
 form header {
-  margin: 1.5rem 0;
-  padding: 1.5rem 0;
+  margin: 0 0 1rem 0;
+}
+
+form h2 {
+  margin: 0 0 1rem 0;
 }
 
 input,
@@ -397,8 +414,12 @@ select,
 textarea {
   display: block;
   font-size: inherit;
-  max-width: var(--card-l);
   font-family: var(--font-family);
+  width: 100%;
+}
+
+button[type='submit'] {
+  width: 100%;
 }
 
 input[type='checkbox'],
@@ -434,27 +455,31 @@ label {
 }
 
 table {
-  border: 1px solid var(--bg-sec);
+  border-collapse: collapse;
   border-radius: var(--radius);
-  border-spacing: 0;
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 0;
+  border-radius: var(--radius);
   white-space: nowrap;
+  padding: 0;
+  width: 100%;
+  max-width: var(--card-l);
+  margin: 0 auto;
+  overflow-x: auto;
 }
 
 table td,
 table th,
 table tr {
-  padding: 0.4rem 0.8rem;
   text-align: var(--center);
+  padding: 0.4rem 0.8rem;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
 }
 
 table thead {
-  background-color: var(--main);
+  background-color: var(--accent);
   border-collapse: collapse;
-  border-radius: var(--radius);
   color: var(--bg);
   margin: 0;
   padding: 0;
@@ -473,24 +498,19 @@ table tr td:first-child {
   text-align: var(--left);
 }
 
-table tr:nth-child(even) {
-  background-color: var(--main);
-}
-
 blockquote {
   display: block;
-  font-size: x-large;
+  font-size: large;
   line-height: var(--line-height);
   margin: 1rem auto;
-  max-width: var(--card-m);
-  padding: 1.5rem 1rem;
+  padding: 2em 1rem;
   text-align: var(--center);
 }
 
 blockquote footer {
   color: var(--text-sec);
   display: block;
-  font-size: small;
+  font-size: large;
   line-height: var(--line-height);
-  padding: 1.5rem 0;
+  padding: 1rem 0 0 0;
 }
