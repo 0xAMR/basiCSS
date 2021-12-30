@@ -1,0 +1,422 @@
+/* basi.css v1.0 - https://github.com/0X-ar/basi.css
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap')
+
+\:root
+  --font-family:'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, 'Helvetica Neue', sans-serif
+  --accent:#0096ff
+  --white:#ffffff
+  --bg:#fbfbf8
+  --bg-sec:#ddd
+  --text:#333
+  --text-sec:#999
+  --card-s:300px
+  --card-m:500px
+  --card-l:750px
+  --content:1000px
+  --box-shadow:0.1rem 0.1rem 0.5rem
+  --line-height:1.5
+  --shadow:#eee
+  --brightness:1.15
+  --active:0.85
+  --radius:0.5rem
+  --center:center
+  --left:left
+
+/* @media (prefers-color-scheme: dark) {
+ *  :root {
+ *  }
+ *}
+
+*
+  box-sizing: border-box
+
+  &::before, &::after
+    box-sizing: border-box
+
+html
+  height: 100%
+
+body
+  height: 100%
+  background: var(--bg)
+  color: var(--text)
+  font-family: var(--font-family)
+  line-height: var(--line-height)
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+  -webkit-font-smoothing: antialiased
+
+header, main
+  margin: 0 auto
+  max-width: var(--content)
+  padding: 2rem 1.25rem
+
+footer
+  text-align: center
+  padding: 0.75rem 0 1rem 0
+
+hr
+  background-color: var(--shadow)
+  border: none
+  height: 2px
+  margin: 1rem 0
+  width: 100%
+
+article aside
+  background-color: var(--white)
+  border: 1px solid var(--bg-sec)
+  border-radius: var(--radius)
+  box-shadow: var(--shadow) var(--box-shadow)
+  margin: 0.5rem
+  padding: 1.25rem
+  width: var(--card-s)
+
+section img, article img
+  max-width: 100%
+  border-radius: var(--radius)
+
+section
+  pre
+    overflow: auto
+
+  aside
+    background: var(--bg-sec)
+    border-left: 0.25rem solid var(--accent)
+    padding: 0.5rem 1rem
+    border-radius: var(--radius)
+
+    p
+      margin: 1rem 0
+
+    &:hover
+      box-shadow: var(--shadow) var(--bg-sec)
+
+[hidden]
+  display: none
+
+article header, div header, main header
+  padding: 0
+
+header a
+  b, em, i, strong
+    margin: 0 0.5rem
+
+img, figure, picture, video, canvas, svg
+  display: block
+  max-width: 100%
+
+header nav img
+  margin: 1rem 0
+
+section header
+  padding: 0
+  width: 100%
+
+nav
+  display: flex
+  align-items: center
+  font-weight: bold
+  justify-content: space-between
+  margin-bottom: 5rem
+
+  ul
+    list-style: none
+    padding: 0
+
+    li
+      display: inline-block
+      font-size: 1.1rem
+      margin: 0 0.75rem
+      position: relative
+      text-align: left
+
+      &:hover ul
+        display: block
+
+      ul
+        background: var(--bg)
+        border: 1px solid var(--bg-sec)
+        border-radius: var(--radius)
+        display: none
+        height: auto
+        left: -2px
+        padding: 0.5rem 1rem
+        position: absolute
+        top: 2rem
+        white-space: nowrap
+        width: auto
+        z-index: 1
+
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          right: 0
+          top: -0.5rem
+          height: 0.5rem
+
+        li
+          display: block
+
+          a
+            display: block
+
+code, samp
+  background-color: var(--accent)
+  border-radius: var(--radius)
+  color: var(--white)
+  display: inline-block
+  margin: 0 0.1rem
+  padding: 0 0.5rem
+
+details
+  margin: 1.5rem 0
+
+  summary
+    font-weight: bold
+    cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold
+  color: #444
+  line-height: var(--line-height)
+  overflow-wrap: break-word
+  margin: 1.25rem 0 0.25rem 0
+
+h1
+  font-size: 2rem
+
+h2
+  font-size: 1.75rem
+
+h3
+  font-size: 1.5rem
+
+h4
+  font-size: 1.25rem
+
+h5
+  font-size: 1.125rem
+
+h6
+  font-size: 1rem
+
+mark
+  padding: 0 0.2rem
+  background-color: var(--bg-sec)
+  border-radius: var(--radius)
+
+ol li, ul li
+  padding: 0.25rem 0
+
+p
+  margin: 0.2rem 0 1rem 0
+  padding: 0
+  width: 100%
+
+pre
+  margin: 1rem 0
+  padding: 1rem 0
+  max-width: var(--card-l)
+
+  code, samp
+    display: block
+    max-width: var(--card-l)
+    padding: 0.5rem 2rem
+    white-space: pre-wrap
+
+small
+  color: var(--text-sec)
+
+a
+  color: var(--accent)
+  display: inline-block
+  font-weight: bold
+  text-decoration: none
+
+  &:active
+    filter: brightness(var(--active))
+    text-decoration: underline
+
+  &:hover
+    filter: brightness(var(--brightness))
+    text-decoration: underline
+
+  b, em, i, strong
+    border-radius: var(--radius)
+    display: inline-block
+    font-weight: bold
+    line-height: var(--line-height)
+    margin: 0.5rem 0
+    padding: 1rem 2rem
+    font-style: normal
+
+button
+  border-radius: var(--radius)
+  display: inline-block
+  font-weight: bold
+  line-height: var(--line-height)
+  margin: 0.5rem 0
+  padding: 1rem 2rem
+  font-style: normal
+  font-family: var(--font-family)
+
+  &:active
+    filter: brightness(var(--active))
+
+  &:hover
+    cursor: pointer
+    filter: brightness(var(--brightness))
+
+a
+  b, strong
+    background-color: var(--accent)
+    border: 2px solid var(--accent)
+    color: var(--bg)
+
+button
+  background-color: var(--accent)
+  border: 2px solid var(--accent)
+  color: var(--bg)
+
+a
+  em, i
+    border: 2px solid var(--accent)
+    border-radius: var(--radius)
+    color: var(--accent)
+    display: inline-block
+    padding: 1rem 2rem
+
+article
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  padding: 0
+
+  aside a
+    color: var(--accent)
+
+figure
+  margin: 0
+  padding: 0
+
+  figcaption
+    color: var(--text-sec)
+    margin: 1rem 0 0.5rem 0
+
+button:disabled, input:disabled
+  background: var(--bg-sec)
+  border-color: var(--bg-sec)
+  color: var(--text-sec)
+  cursor: not-allowed
+
+button[disabled]:hover
+  filter: none
+
+form
+  border: 1px solid var(--bg-sec)
+  background-color: var(--white)
+  border-radius: var(--radius)
+  box-shadow: var(--shadow) var(--box-shadow)
+  display: block
+  max-width: var(--card-l)
+  min-width: var(--card-s)
+  padding: 1.5rem
+  text-align: var(--left)
+  margin: 3rem auto 0 auto
+
+  header, h2
+    margin: 0 0 1rem 0
+
+input, label, select, textarea
+  display: block
+  font-size: inherit
+  font-family: var(--font-family)
+  width: 100%
+
+button[type='submit']
+  width: 100%
+
+input
+  &[type='checkbox'], &[type='radio']
+    display: inline-block
+
+  &[type='checkbox'] + label, &[type='radio'] + label
+    display: inline-block
+    font-weight: normal
+    position: relative
+    top: 1px
+
+  border: 1px solid var(--bg-sec)
+  border-radius: var(--radius)
+  margin-bottom: 1rem
+  padding: 0.4rem 0.8rem
+
+select, textarea
+  border: 1px solid var(--bg-sec)
+  border-radius: var(--radius)
+  margin-bottom: 1rem
+  padding: 0.4rem 0.8rem
+
+input[readonly], textarea[readonly]
+  background-color: var(--bg-sec)
+
+label
+  font-weight: bold
+  margin-bottom: 0.2rem
+
+table
+  border-collapse: collapse
+  border-radius: var(--radius)
+  border-radius: var(--radius)
+  white-space: nowrap
+  padding: 0
+  width: 100%
+  max-width: var(--card-l)
+  margin: 0 auto
+  overflow-x: auto
+
+  td, th, tr
+    text-align: var(--center)
+    padding: 0.4rem 0.8rem
+
+tr:nth-child(even)
+  background-color: #eee
+
+table
+  thead
+    background-color: var(--accent)
+    border-collapse: collapse
+    color: var(--bg)
+    margin: 0
+    padding: 0
+
+    th
+      &:first-child
+        border-top-left-radius: var(--radius)
+
+      &:last-child
+        border-top-right-radius: var(--radius)
+
+      &:first-child
+        text-align: var(--left)
+
+  tr td:first-child
+    text-align: var(--left)
+
+blockquote
+  display: block
+  font-size: large
+  line-height: var(--line-height)
+  margin: 1rem auto
+  padding: 2em 1rem
+  text-align: var(--center)
+
+  footer
+    color: var(--text-sec)
+    display: block
+    font-size: large
+    line-height: var(--line-height)
+    padding: 1rem 0 0 0
